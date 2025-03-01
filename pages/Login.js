@@ -1,83 +1,141 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import Icon from "react-native-vector-icons/FontAwesome";
-import '../global.css';
+import React, { useState } from "react";
+import { View, Text, Image, TextInput, TouchableOpacity, Dimensions } from "react-native";
 
-export default function LoginScreen() {
+const { width, height } = Dimensions.get("window");
+
+export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <View className="flex-1 bg-gray-100">
-      {/* Top Image with Shape */}
-      <View className="h-2/5 relative">
-        <Image
-          source={{ uri: "https://source.unsplash.com/500x500/?technology" }}
-          className="w-full h-full"
-        />
-        <LinearGradient
-          colors={["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"]}
-          className="absolute inset-0 rounded-b-3xl"
-        />
-      </View>
+      {/* PNG Image Covering Top 35% */}
+      <Image
+        source={require("../assets/loginPageFront.png")} // Ensure file exists
+        style={{
+          width: width,
+          height: height * 0.35,
+          resizeMode: "cover",
+        }}
+      />
 
-      {/* Login Form Drawer */}
-      <View className="flex-1 px-16 pt-10 pb-6 bg-white rounded-t-3xl shadow-lg -mt-10">
-        <Text className="text-2xl font-bold text-center text-gray-800 mb-6">
-          Welcome Back!
+      {/* Bottom Content */}
+      <View className="flex-1 items-center mt-10">
+        {/* Welcome Text */}
+        <Text className="text-2xl font-bold" style={{ fontFamily: "ComicSansMS", fontSize: 40,marginLeft:100 }}>
+          Welcome to
         </Text>
 
+        {/* Logo Below Welcome Text */}
+        <Image
+          source={require("../assets/logo.png")} // Ensure this file exists
+          style={{
+            width: 230,
+            height: 230,
+            resizeMode: "contain",
+            marginTop: -50,
+            marginLeft:70
+          }}
+        />
+
         {/* Input Fields */}
-        <TextInput
-          placeholder="Username"
-          className="w-full bg-gray-200 p-4 rounded-xl mb-4 text-lg text-gray-700"
-          placeholderTextColor="#666"
-        />
-        <TextInput
-          placeholder="Password"
-          secureTextEntry
-          className="w-full bg-gray-200 p-4 rounded-xl mb-4 text-lg text-gray-700"
-          placeholderTextColor="#666"
-        />
+        <View className="mt-5 w-1/5">
+          <TextInput
+            value={email}
+            onChangeText={setEmail}
+            placeholder="Enter Email"
+            placeholderTextColor="gray"
+            keyboardType="email-address"
+            style={{
+              backgroundColor: "#F5F5F5",
+              padding: 12,
+              borderRadius: 25,
+              shadowColor: "#000",
+              shadowOpacity: 0.1,
+              shadowRadius: 4,
+              elevation: 3,
+              fontSize: 16,
+              textAlign: "center",
+              marginBottom: 10,
+              width: 350,
+              marginLeft: 50,
+            }}
+          />
 
-        {/* Forgot Password */}
-        <TouchableOpacity>
-          <Text className="text-right text-blue-500 mb-4">Forgot Password?</Text>
-        </TouchableOpacity>
+          <TextInput
+            value={password}
+            onChangeText={setPassword}
+            placeholder="Enter Password"
+            placeholderTextColor="gray"
+            secureTextEntry
+            style={{
+              backgroundColor: "#F5F5F5",
+              padding: 12,
+              borderRadius: 25,
+              shadowColor: "#000",
+              shadowOpacity: 0.1,
+              shadowRadius: 4,
+              elevation: 3,
+              fontSize: 16,
+              textAlign: "center",
+              marginBottom: 10,
+              width: 350,
+              marginLeft: 50,
+            }}
+          />
 
-        {/* Login Button */}
-        <TouchableOpacity className="w-full bg-blue-500 p-4 rounded-xl items-center">
-          <Text className="text-white text-lg font-semibold">Login</Text>
-        </TouchableOpacity>
+          {/* Forgot Password (Right Aligned) */}
+          <TouchableOpacity className="self-end mt-2" style={{marginLeft:"60%"}}>
+            <Text className="text-blue-500 text-sm">Forgot Password?</Text>
+          </TouchableOpacity>
 
-        {/* Divider */}
-        <View className="flex-row items-center my-6">
-          <View className="flex-1 h-px bg-gray-300" />
-          <Text className="mx-3 text-gray-500">Or Login with</Text>
-          <View className="flex-1 h-px bg-gray-300" />
+          <TouchableOpacity
+            className="bg-blue-500 p-3 rounded-full shadow mt-5"
+            style={{
+              backgroundColor: "#007BFF",
+              padding: 15,
+              borderRadius: 25,
+              alignItems: "center",
+              shadowColor: "#000",
+              shadowOpacity: 0.2,
+              shadowRadius: 4,
+              elevation: 5,
+              width: "50%",
+              marginLeft:120,
+              marginTop:10
+            }}
+          >
+            <Text className="text-white font-bold text-lg">Login</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Divider with OR */}
+        <View className="flex-row items-center w-3/5 my-5" style={{marginLeft:"50%",marginTop:20}}>
+          <View className="flex-1 h-[1px] bg-gray-400" />
+          <Text className="mx-2 text-gray-500">OR</Text>
+          <View className="flex-1 h-[1px] bg-gray-400" />
         </View>
 
         {/* Social Login Buttons */}
-        <View className="flex-row justify-center space-x-4">
-          <TouchableOpacity className="p-3 bg-gray-200 rounded-xl">
-            <Icon name="google" size={24} color="red" />
+        {/* <View className="flex-row space-x-5">
+          <TouchableOpacity className="bg-white p-3 rounded-full shadow">
+            <Image source={require("../assets/google.png")} style={{ width: 30, height: 30 }} />
           </TouchableOpacity>
-          <TouchableOpacity className="p-3 bg-gray-200 rounded-xl">
-            <Icon name="facebook" size={24} color="blue" />
+          <TouchableOpacity className="bg-white p-3 rounded-full shadow">
+            <Image source={require("../assets/facebook.png")} style={{ width: 30, height: 30 }} />
           </TouchableOpacity>
-          <TouchableOpacity className="p-3 bg-gray-200 rounded-xl">
-            <Icon name="apple" size={24} color="black" />
+          <TouchableOpacity className="bg-white p-3 rounded-full shadow">
+            <Image source={require("../assets/apple.png")} style={{ width: 30, height: 30 }} />
           </TouchableOpacity>
-        </View>
+        </View> */}
 
-        {/* Register Link */}
-        <TouchableOpacity>
-          <Text className="text-center text-blue-500 mt-6">
-            Don't have an account? Register
+        {/* Sign Up Link */}
+        <TouchableOpacity className="mt-5">
+          <Text className="text-gray-500">
+            Don't have an account? <Text className="text-blue-500">Sign Up</Text>
           </Text>
         </TouchableOpacity>
       </View>
-
-      <StatusBar style="auto" />
     </View>
   );
 }
