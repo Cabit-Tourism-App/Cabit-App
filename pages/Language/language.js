@@ -17,7 +17,6 @@ const LanguageSelectionScreen = () => {
   return (
     <View style={styles.container}>
       <Header username="Harsh" />
-      <SearchBar placeholder="Search Language" />
       <Text style={styles.title}>Selected Languages</Text>
       <ScrollView horizontal style={styles.languageContainer}>
         {selectedLanguages.map((lang, index) => (

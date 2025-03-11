@@ -17,12 +17,12 @@ const LanguageCard = ({ language, image, onRemove }) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: 120,
-    height: 80,
+    width: 160,
+    height: 100,
     borderRadius: 10,
     overflow: "hidden",
     backgroundColor: "#FFF",
-    margin: 10,
+    margin: 12,
     elevation: 3,
     justifyContent: "center",
     alignItems: "center",

@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "90%",
     alignSelf: "center",
-    marginTop: 20,
+    marginTop: -50,
+    marginBottom:30
   },
   text: {
     fontSize: 18,
