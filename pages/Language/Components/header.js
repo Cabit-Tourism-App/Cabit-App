@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Bell, Grid } from "lucide-react-native"; // Icons
+// import { Bell, Grid } from "lucide-react-native"; // Icons
 
 const Header = ({ username }) => {
   return (
@@ -8,8 +8,8 @@ const Header = ({ username }) => {
       <Text style={styles.welcome}>Welcome,</Text>
       <Text style={styles.username}>{username}</Text>
       <View style={styles.icons}>
-        <Bell size={24} color="black" />
-        <Grid size={24} color="black" style={{ marginLeft: 10 }} />
+        {/* <Bell size={24} color="black" /> */}
+        {/* <Grid size={24} color="black" style={{ marginLeft: 10 }} /> */}
       </View>
     </View>
   );
@@ -19,11 +19,14 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFD36E",
     padding: 20,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    marginTop:40,
+    widt:100,
+    height:200,
   },
   welcome: {
     fontSize: 22,

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
-import Header from "../components/header";
-import SearchBar from "../components/searchBar";
-import LanguageCard from "../components/languageCard";
-import Button from "../components/button";
+import Header from "./Components/header";
+import SearchBar from "./Components/searchBar";
+import LanguageCard from "./Components/languageCard";
+import Button from "./Components/button";
 
 const LanguageSelectionScreen = () => {
   const [selectedLanguages, setSelectedLanguages] = useState([
-    { name: "English", image: require("../assets/english.png") }, // Replace with actual path
+    { name: "English", image: require("../../assets/logo.png") }, // Replace with actual path
   ]);
 
   const handleRemove = (language) => {
@@ -23,7 +23,7 @@ const LanguageSelectionScreen = () => {
         {selectedLanguages.map((lang, index) => (
           <LanguageCard key={index} language={lang.name} image={lang.image} onRemove={() => handleRemove(lang.name)} />
         ))}
-        <LanguageCard language="+" image={require("../assets/add.png")} /> {/* Placeholder for adding */}
+        <LanguageCard language="+" image={require("../../assets/logo.png")} /> {/* Placeholder for adding */}
       </ScrollView>
       <Button title="Next" onPress={() => console.log("Next Pressed")} />
     </View>
