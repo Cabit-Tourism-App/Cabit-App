@@ -4,21 +4,21 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Svg, { Image } from 'react-native-svg';
 
-const BackgroundSVG = () => {
-  return (
-    <View style={styles.container}>
-      <Svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-        <Image
-          href={require('./assets/background.svg')} 
-          width="100%"
-          height="100%"
-        />
-      </Svg>
-    </View>
-  );
-};
+// const BackgroundSVG = () => {
+//   return (
+//     <View style={styles1.container}>
+//       <Svg width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+//         <Image
+//           href={require('./assets/background.svg')} 
+//           width="100%"
+//           height="100%"
+//         />
+//       </Svg>
+//     </View>
+//   );
+// };
 
-const styles = StyleSheet.create({
+const styles1 = StyleSheet.create({
   container: {
     position: 'absolute',
     width: '100%',
@@ -26,19 +26,17 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BackgroundSVG;
+// export default BackgroundSVG;
 
 // animated logo component
 
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
 import LottieView from 'lottie-react-native';
 
 const AnimatedLogo = () => {
   return (
-    <View style={styles.container}>
+    <View style={styles2.container}>
       <LottieView
-        source={require('C:\Users\harsh\OneDrive\Documents\GitHub\Cabit-App\assets\Cab.gif')} 
+        source={require('D:\\cabit\\cabitcabit\\assets\\Cab.gif')} 
         autoPlay
         loop
         style={styles.animation}
@@ -47,7 +45,7 @@ const AnimatedLogo = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles2 = StyleSheet.create({
   container: {
     position: 'absolute',
     width: '100%',
@@ -61,17 +59,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AnimatedLogo;
+// export default AnimatedLogo;
 
 // App Name SVG Component
 
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import Svg, { Text } from 'react-native-svg';
+import { Text } from 'react-native-svg';
 
 const AppNameSVG = () => {
   return (
-    <View style={styles.container}>
+    <View style={styles3.container}>
       <Svg width="100" height="40">
         <Text
           x="50%"
@@ -88,7 +84,7 @@ const AppNameSVG = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles3 = StyleSheet.create({
   container: {
     position: 'absolute',
     bottom: 40,
@@ -97,20 +93,18 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AppNameSVG;
+// export default AppNameSVG;
 
 // splash screen component
 
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import BackgroundSVG from './BackgroundSVG';
-import AnimatedLogo from './AnimatedLogo';
-import AppNameSVG from './AppNameSVG';
+// import BackgroundSVG from './BackgroundSVG';
+// import AnimatedLogo from './AnimatedLogo';
+// import AppNameSVG from './AppNameSVG';
 
 const SplashScreen = () => {
   return (
     <View style={styles.container}>
-      <BackgroundSVG />
+      {/* <BackgroundSVG /> */}
       <AnimatedLogo />
       <AppNameSVG />
     </View>

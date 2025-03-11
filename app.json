@@ -29,6 +29,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.anonymous.cabitcabit",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
