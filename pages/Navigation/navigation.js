@@ -97,9 +97,9 @@
 
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Header from '../components/header';
-import InfoCard from '../components/infoCard';
-import BackgroundImage from '../components/backgroundImage';
+import Header from './components/header';
+import InfoCard from './components/infoCard';
+import BackgroundImage from './components/backgroundImage';
 
 const NavigationScreen = ({ navigation }) => {
   return (
@@ -108,21 +108,21 @@ const NavigationScreen = ({ navigation }) => {
         <Header />
         
         <InfoCard 
-          image={require('../assets/cab.png')}
+          image={require('../../assets/logo.png')}
           title="Want to book a cab?"
           subtitle="Book seamless cab experience"
           onPress={() => navigation.navigate('CabBooking')}
         />
         
         <InfoCard 
-          image={require('../assets/trip.png')}
+          image={require('../../assets/logo.png')}
           title="Want to book a trip?"
           subtitle="Book from our itineraries"
           onPress={() => navigation.navigate('TripBooking')}
         />
 
         <InfoCard 
-          image={require('../assets/tour.png')}
+          image={require('../../assets/logo.png')}
           title="Plan a tour as your wish"
           subtitle="Plan tours according to you"
           onPress={() => navigation.navigate('TourPlanner')}

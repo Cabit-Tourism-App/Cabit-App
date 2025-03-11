@@ -4,7 +4,7 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/logo.png')} style={styles.logo} />
+      <Image source={require('../../../assets/logo.png')} style={styles.logo} />
       <Text style={styles.title}>
         Your Journey, <Text style={styles.highlight}>Your Choice</Text>
       </Text>

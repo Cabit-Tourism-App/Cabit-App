@@ -4,8 +4,8 @@ import { ImageBackground, StyleSheet } from 'react-native';
 const BackgroundImage = ({ children }) => {
   return (
     <ImageBackground 
-      source={require('../assets/background.png')} 
-      style={styles.background}
+    image={require('../../../assets/logo.png')}
+    style={styles.background}
     >
       {children}
     </ImageBackground>
