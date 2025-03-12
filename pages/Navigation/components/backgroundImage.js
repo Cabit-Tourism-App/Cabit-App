@@ -1,11 +1,11 @@
-import React from 'react';
-import { ImageBackground, StyleSheet } from 'react-native';
+import React from "react";
+import { ImageBackground, StyleSheet } from "react-native";
 
 const BackgroundImage = ({ children }) => {
   return (
-    <ImageBackground 
-    image={require('../../../assets/logo.png')}
-    style={styles.background}
+    <ImageBackground
+      source={require("../../../assets/bg.png")} // Replace with your background image
+      style={styles.background}
     >
       {children}
     </ImageBackground>
@@ -15,8 +15,8 @@ const BackgroundImage = ({ children }) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
+    resizeMode: "cover",
+    justifyContent: "center",
   },
 });
 

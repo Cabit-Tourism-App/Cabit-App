@@ -3,6 +3,7 @@ import './global.css';
 import LoginScreen from "./pages/Login/Login";
 import Splash from "pages/Splash_Screen/Splash";
 import MapScreen from "pages/CabBooking/booking";
+import PaymentScreen from "pages/Payment/PaymentScreen";
 import OnboardingScreen11 from "pages/Onboarding/OnboardingScreen11";
 import OnboardingScreen12 from "pages/Onboarding/OnboardingScreen12";
 import OnboardingScreen13 from "pages/Onboarding/OnboardingScreen13";
@@ -15,6 +16,6 @@ import LanguageSelectionScreen from "pages/Language/language";
 // import NavigatorPage from "pages/navigation_screen";
 export default function App() {
   return (
-   <LocationScreen/>
+   <Splash/>
   );
 }
