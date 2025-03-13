@@ -1,24 +1,50 @@
-import { View, Text } from "react-native";
-import './global.css';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import "./global.css"
+// Import Screens
+import Splash from "./pages/Splash_Screen/Splash";
+import OnboardingScreen11 from "./pages/Onboarding/OnboardingScreen11";
+import OnboardingScreen12 from "./pages/Onboarding/OnboardingScreen12";
+import OnboardingScreen13 from "./pages/Onboarding/OnboardingScreen13";
 import LoginScreen from "./pages/Login/Login";
-import Splash from "pages/Splash_Screen/Splash";
-import MapScreen from "pages/CabBooking/booking";
-import OnboardingScreen11 from "pages/Onboarding/OnboardingScreen11";
-import OnboardingScreen12 from "pages/Onboarding/OnboardingScreen12";
-import OnboardingScreen13 from "pages/Onboarding/OnboardingScreen13";
 import NavigationScreen from "./pages/Navigation/navigation";
-import LanguageSelectionScreen from "pages/Language/language";
-import OnboardingScreen12 from "pages/Onboarding/OnboardingScreen12";
+import LanguageSelectionScreen from "./pages/Language/language";
+import BookingLocationScreen from "./pages/CabBooking/chooseLocationBooking";
+import MapScreen from "./pages/CabBooking/booking";
+import RideAcceptedScreen from "./pages/CabBooking/rideAccepted";
+import SignupPage from "pages/SignUp/Signup";
+// Create Stack Navigator
+const Stack = createStackNavigator();
 
-// import HomeScreen from "pages/home_screen";
-// import OnboardingScreen from "pages/onboarding/screen1";
-// import Navig atorPage from "pages/navigation_screen";
 export default function App() {
   return (
-<<<<<<< HEAD
-   <NavigationScreen navigation=""/>
-=======
-   <Splash/>
->>>>>>> 60fd24b97387fc152053ee21d04fe4b1054b7db1
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Onboarding11" screenOptions={{ headerShown: false }}>
+        
+        {/* Splash Screen */}
+        {/* <Stack.Screen name="Splash" component={Splash} /> */}
+
+        {/* Onboarding Screens */}
+        <Stack.Screen name="Onboarding11" component={OnboardingScreen11} />
+        <Stack.Screen name="Onboarding12" component={OnboardingScreen12} />
+        <Stack.Screen name="Onboarding13" component={OnboardingScreen13} />
+
+        {/* Login Screen */}
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Signup" component={SignupPage} />
+
+        {/* Main Navigation Screen */}
+        <Stack.Screen name="Navigation" component={NavigationScreen} />
+
+        {/* Language Selection */}
+        <Stack.Screen name="LanguageSelection" component={LanguageSelectionScreen} />
+
+        {/* Booking Flow */}
+        <Stack.Screen name="BookingLocation" component={BookingLocationScreen} />
+        <Stack.Screen name="MapScreen" component={MapScreen} />
+        <Stack.Screen name="RideAccepted" component={RideAcceptedScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }

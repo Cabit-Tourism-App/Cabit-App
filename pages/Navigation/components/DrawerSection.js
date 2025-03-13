@@ -18,21 +18,21 @@ const DrawerSection = ({ navigation }) => {
             image={require('../../../assets/logo.png')}
             title="Want to book a cab?"
             subtitle="Book seamless cab experience"
-            onPress={() => navigation.navigate('CabBooking')}
+            onPress={() => navigation.navigate('BookingLocation')}
           />
           
           <InfoCard 
             image={require('../../../assets/logo.png')}
             title="Want to book a trip?"
             subtitle="Book from our itineraries"
-            onPress={() => navigation.navigate('TripBooking')}
+            onPress={() => navigation.navigate('BookingLocation')}
           />
 
           <InfoCard 
             image={require('../../../assets/logo.png')}
             title="Plan a tour as you wish"
             subtitle="Plan tours according to you"
-            onPress={() => navigation.navigate('TourPlanner')}
+            onPress={() => navigation.navigate('BookingLocation')}
           />
         </View>
       </ImageBackground>
