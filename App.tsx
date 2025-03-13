@@ -14,6 +14,7 @@ import BookingLocationScreen from "./pages/CabBooking/chooseLocationBooking";
 import MapScreen from "./pages/CabBooking/booking";
 import RideAcceptedScreen from "./pages/CabBooking/rideAccepted";
 import SignupPage from "pages/SignUp/Signup";
+// new comment
 // Create Stack Navigator
 const Stack = createStackNavigator();
 
