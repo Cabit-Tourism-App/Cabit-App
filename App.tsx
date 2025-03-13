@@ -46,5 +46,5 @@ export default function App() {
         <Stack.Screen name="RideAccepted" component={RideAcceptedScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-  );
+  )
 }

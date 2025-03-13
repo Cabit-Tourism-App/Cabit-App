@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import InputImage from '../components/inputImage';
-import { INPUT_IMAGE_URI } from '../constants/imageUri';
+import InputImage from './components/InputImage';
+import { INPUT_IMAGE_URI } from './constants/imageUri';
 
 const Splash = () => {
   return (
