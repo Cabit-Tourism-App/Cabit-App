@@ -8,6 +8,18 @@ import OnboardingScreen11 from "./pages/Onboarding/OnboardingScreen11";
 import OnboardingScreen12 from "./pages/Onboarding/OnboardingScreen12";
 import OnboardingScreen13 from "./pages/Onboarding/OnboardingScreen13";
 import LoginScreen from "./pages/Login/Login";
+<<<<<<< HEAD
+import Splash from "pages/Splash_Screen/Splash";
+import MapScreen from "pages/CabBooking/booking";
+import PaymentScreen from "pages/Payment/PaymentScreen";
+import OnboardingScreen11 from "pages/Onboarding/OnboardingScreen11";
+import OnboardingScreen12 from "pages/Onboarding/OnboardingScreen12";
+import OnboardingScreen13 from "pages/Onboarding/OnboardingScreen13";
+import SplashScreen0 from "pages/Onboarding/SplashScreen0";
+import UserProfile from "pages/UserProfile/UserProfile";
+import LocationScreen from "./pages/Favourite/screen";
+=======
+>>>>>>> fd75d9a85324f3659f8f75c7c72b47490753e3ee
 import NavigationScreen from "./pages/Navigation/navigation";
 import LanguageSelectionScreen from "./pages/Language/language";
 import BookingLocationScreen from "./pages/CabBooking/chooseLocationBooking";
@@ -20,6 +32,10 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
+<<<<<<< HEAD
+   <SplashScreen0/>
+  );
+=======
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Onboarding11" screenOptions={{ headerShown: false }}>
         
@@ -48,4 +64,5 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   )
+>>>>>>> fd75d9a85324f3659f8f75c7c72b47490753e3ee
 }
