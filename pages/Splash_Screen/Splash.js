@@ -1,19 +1,22 @@
-import React from 'react';
-import { View } from 'react-native';
-import InputImage from './components/InputImage';
-import { INPUT_IMAGE_URI } from './constants/imageUri';
+import React from "react";
+import { View, Dimensions, StyleSheet } from "react-native";
+import FullScreenImage from "./Components/FullScreenImage";
+import { IMAGE_URI } from "./constants/imageUri";
 
-const Splash = () => {
-  return (
-    <View
-      className="flex-1 justify-center items-center"
-      accessible={true}
-      accessibilityRole="image"
-      accessibilityLabel="Input design illustration"
-    >
-      <InputImage uri={INPUT_IMAGE_URI} />
-    </View>
-  );
-};
+const { width, height } = Dimensions.get("window");
+
+const Splash = () => (
+  <View style={styles.container}>
+    <FullScreenImage uri={IMAGE_URI} />
+  </View>
+);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width,
+    height,
+  },
+});
 
 export default Splash;
