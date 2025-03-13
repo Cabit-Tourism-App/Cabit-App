@@ -14,6 +14,7 @@ import BookingLocationScreen from "./pages/CabBooking/chooseLocationBooking";
 import MapScreen from "./pages/CabBooking/booking";
 import RideAcceptedScreen from "./pages/CabBooking/rideAccepted";
 import SignupPage from "pages/SignUp/Signup";
+import SplashScreen0 from "pages/Onboarding/SplashScreen0";
 // new comment
 // Create Stack Navigator
 const Stack = createStackNavigator();
@@ -21,12 +22,14 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Onboarding11" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName="SplashScreen0" screenOptions={{ headerShown: false }}>
         
         {/* Splash Screen */}
         {/* <Stack.Screen name="Splash" component={Splash} /> */}
 
         {/* Onboarding Screens */}
+        <Stack.Screen name="SplashScreen0" component={SplashScreen0} />
+
         <Stack.Screen name="Onboarding11" component={OnboardingScreen11} />
         <Stack.Screen name="Onboarding12" component={OnboardingScreen12} />
         <Stack.Screen name="Onboarding13" component={OnboardingScreen13} />
