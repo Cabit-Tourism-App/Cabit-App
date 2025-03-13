@@ -19,7 +19,7 @@ import SocialIconsBar from "./Components/SocialIconsBar";
 
 const { width, height } = Dimensions.get("window");
 
-export default function LoginPage() {
+export default function LoginPage({navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -81,7 +81,7 @@ export default function LoginPage() {
             </TouchableOpacity>
 
             {/* Login Button */}
-            <LoginButton title="Login" onPress={() => alert("Login Clicked")} />
+            <LoginButton title="Login" onPress={() => navigation.navigate("LanguageSelection")} />
           </View>
 
           {/* Divider */}
@@ -91,7 +91,7 @@ export default function LoginPage() {
           <SocialIconsBar />
 
           {/* Sign Up Link */}
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
             <Text className="text-gray-500"
               style={{ marginLeft: "25%",marginTop:40 }}>
               Don't have an account? <Text className="text-blue-500">Sign Up</Text>

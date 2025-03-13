@@ -5,7 +5,7 @@ import SearchBar from "./Components/searchBar";
 import LanguageCard from "./Components/languageCard";
 import Button from "./Components/button";
 
-const LanguageSelectionScreen = () => {
+const LanguageSelectionScreen = ({navigation}) => {
   const [selectedLanguages, setSelectedLanguages] = useState([
     { name: "English", image: require("../../assets/logo.png") }, // Replace with actual path
   ]);
@@ -24,7 +24,7 @@ const LanguageSelectionScreen = () => {
         ))}
         <LanguageCard language="+" image={require("../../assets/logo.png")} /> {/* Placeholder for adding */}
       </ScrollView>
-      <Button title="Next" onPress={() => console.log("Next Pressed")} />
+      <Button title="Next" onPress={() => navigation.navigate("Navigation")} />
     </View>
   );
 };

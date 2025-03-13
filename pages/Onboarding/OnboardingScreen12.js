@@ -1,14 +1,14 @@
 import React from "react";
-import { View, Dimensions, StyleSheet } from "react-native";
+import { View, Dimensions, StyleSheet,Pressable } from "react-native";
 import FullScreenImage from "./Components/FullScreenImage";
 import { IMAGE_URI } from "./constants/ImageUri1";
 
 const { width, height } = Dimensions.get("window");
 
-const OnboardingScreen12 = () => (
-  <View style={styles.container}>
+const OnboardingScreen12 = ({navigation}) => (
+  <Pressable style={styles.container} onPress={() => navigation.navigate("Onboarding13")}>
     <FullScreenImage uri={IMAGE_URI} />
-  </View>
+  </Pressable>
 );
 
 const styles = StyleSheet.create({
