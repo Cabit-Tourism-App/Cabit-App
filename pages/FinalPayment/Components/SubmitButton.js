@@ -1,11 +1,11 @@
-// PaymentScreen/components/ProceedButton.js
+// RatingScreen/components/SubmitButton.js
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const ProceedButton = ({ onPress }) => {
+const SubmitButton = ({ onPress }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress} activeOpacity={0.8}>
-      <Text style={styles.buttonText}>Proceed to Pay</Text>
+      <Text style={styles.buttonText}>Submit</Text>
     </TouchableOpacity>
   );
 };
@@ -13,12 +13,12 @@ const ProceedButton = ({ onPress }) => {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: '#FFCC66',
-    borderRadius: 30,
+    borderRadius: 24,
     paddingVertical: 16,
+    marginHorizontal: 16,
+    marginVertical: 16,
     alignItems: 'center',
     justifyContent: 'center',
-    marginHorizontal: 20,
-    marginVertical: 20,
   },
   buttonText: {
     fontSize: 18,
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProceedButton;
+export default SubmitButton;
