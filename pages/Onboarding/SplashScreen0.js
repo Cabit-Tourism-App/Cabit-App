@@ -21,13 +21,13 @@
 
 // export default OnboardingScreen14;
 import React, { useEffect, useRef } from "react";
-import { View, Dimensions, StyleSheet, Animated } from "react-native";
+import { View, Dimensions, StyleSheet, Animated,Pressable } from "react-native";
 import FullScreenImage from "./Components/FullScreenImage";
 import { IMAGE_URI } from "./constants/ImageUri3";
 
 const { width, height } = Dimensions.get("window");
 
-const SplashScreen0 = () => {
+const SplashScreen0 = ({navigation}) => {
   const moveX = useRef(new Animated.Value(-100)).current; // Start from left
 
   useEffect(() => {
@@ -53,16 +53,16 @@ const SplashScreen0 = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container} onPress={() => navigation.navigate("Onboarding11")}>
       {/* Background Image */}
       <FullScreenImage uri={IMAGE_URI} />
 
       {/* Moving GIF (Cab with Smoke) */}
       <Animated.Image
-        source={require("assets/Cab.gif")} // Ensure the GIF is in assets
+        source={require("../../assets/Cab.gif")} // Ensure the GIF is in assets
         style={[styles.gif, { transform: [{ translateX: moveX }] }]}
       />
-    </View>
+    </Pressable>
   );
 };
 
