@@ -5,7 +5,7 @@ import { IMAGE_URI } from "./constants/ImageUri4";
 
 const { width, height } = Dimensions.get("window");
 
-const OnboardingScreen13 = ({navigation}) => (
+const RideConfirmScreen = ({navigation}) => (
   <Pressable style={styles.container} onPress={() => navigation.navigate("Login")}>
     <FullScreenImage uri={IMAGE_URI} />
   </Pressable>
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OnboardingScreen13;
+export default RideConfirmScreen;
