@@ -3,10 +3,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import "./global.css"
 // Import Screens
-import Splash from "./pages/Splash_Screen/Splash";
+
+import RideConfirmScreen from "pages/Onboarding/RideConfirmScreen";
+import RatingScreen from "pages/FinalPayment/RatingScreen";
+import ProfileScreen from "pages/UserProfile/ProfileScreen"
+import PaymentMethodScreen from "pages/Payment/PaymentMethodScreen";
 import OnboardingScreen11 from "./pages/Onboarding/OnboardingScreen11";
 import OnboardingScreen12 from "./pages/Onboarding/OnboardingScreen12";
 import OnboardingScreen13 from "./pages/Onboarding/OnboardingScreen13";
+import CancelBookingScreen from "pages/Cancel_Booking/CancelBookingScreen";
 import LoginScreen from "./pages/Login/Login";
 import NavigationScreen from "./pages/Navigation/navigation";
 import LanguageSelectionScreen from "./pages/Language/language";
