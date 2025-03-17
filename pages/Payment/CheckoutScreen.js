@@ -3,71 +3,82 @@ import { View, Button, Alert, StyleSheet } from 'react-native';
 import { useStripe } from '@stripe/stripe-react-native';
 
 const CheckoutScreen = () => {
-  const [payableAmount, setpayableAmount] = useState(600);
+  const [payableAmount, setPayableAmount] = useState(600);
   const { initPaymentSheet, presentPaymentSheet } = useStripe();
   const [loading, setLoading] = useState(false);
 
-  // This function would call your backend to create a payment intent
-  const API_URL = "http://localhost:8080";
+  // Backend API URL
+  const API_URL = "http://localhost:3000/api";
+
+  // Fetch payment sheet parameters
   const fetchPaymentSheetParams = async () => {
-    // Call your backend to create a PaymentIntent and get the data needed for the payment sheet
-    const response = await fetch('${API_URL}/payment-sheet', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        amount: payableAmount, // Amount in cents
-        currency: 'inr',
-      }),
-    });
-    
-    const { paymentIntent, ephemeralKey, customer } = await response.json();
-    
-    return {
-      paymentIntent,
-      ephemeralKey,
-      customer,
-    };
+    try {
+      const response = await fetch(`${API_URL}/payment-sheet`, {  
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: payableAmount, // Amount in cents
+          currency: "inr",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch payment sheet params");
+      }
+
+      const { paymentIntent, ephemeralKey, customer } = await response.json();
+      return { paymentIntent, ephemeralKey, customer };
+    } catch (error) {
+      console.error("Error fetching payment sheet params:", error);
+      Alert.alert("Error", "Could not fetch payment sheet parameters");
+      return {};
+    }
   };
 
+  // Initialize Payment Sheet
   const initializePaymentSheet = async () => {
     setLoading(true);
-    
     try {
       const { paymentIntent, ephemeralKey, customer } = await fetchPaymentSheetParams();
-      
+
+      if (!paymentIntent || !ephemeralKey || !customer) {
+        throw new Error("Invalid payment sheet parameters");
+      }
+
       const { error } = await initPaymentSheet({
-        merchantDisplayName: 'Akshit',
+        merchantDisplayName: "Akshit",
         customerId: customer,
         customerEphemeralKeySecret: ephemeralKey,
         paymentIntentClientSecret: paymentIntent,
         allowsDelayedPaymentMethods: true,
         defaultBillingDetails: {
-          name: 'Akshit',
-        }
+          name: "Akshit",
+        },
       });
-      
+
       if (error) {
         Alert.alert(`Error code: ${error.code}`, error.message);
       }
     } catch (error) {
-      console.log('Error initializing payment sheet:', error);
-      Alert.alert('Error', 'Unable to initialize payment sheet');
+      console.error("Error initializing payment sheet:", error);
+      Alert.alert("Error", "Unable to initialize payment sheet");
     } finally {
       setLoading(false);
     }
   };
 
+  // Open Payment Sheet
   const openPaymentSheet = async () => {
     if (loading) return;
-    
+
     const { error } = await presentPaymentSheet();
     
     if (error) {
       Alert.alert(`Error code: ${error.code}`, error.message);
     } else {
-      Alert.alert('Success', 'Your payment was successful!');
+      Alert.alert("Success", "Your payment was successful!");
     }
   };
 
@@ -77,7 +88,7 @@ const CheckoutScreen = () => {
         title="Checkout"
         onPress={async () => {
           await initializePaymentSheet().then(async () => {
-          await openPaymentSheet();
+            await openPaymentSheet();
           });
         }}
         disabled={loading}
@@ -89,8 +100,8 @@ const CheckoutScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
