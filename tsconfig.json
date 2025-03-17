@@ -6,6 +6,7 @@
 
     "baseUrl": ".",
     "paths": {
+      "expo-router/*": ["node_modules/expo-router/*"],
       "~/*": ["src/*"]
     }
   }
