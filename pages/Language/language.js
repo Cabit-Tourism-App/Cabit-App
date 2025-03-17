@@ -7,7 +7,7 @@ import Button from "./Components/button";
 
 const LanguageSelectionScreen = ({navigation}) => {
   const [selectedLanguages, setSelectedLanguages] = useState([
-    { name: "English", image: require("../../assets/logo.png") }, // Replace with actual path
+    { name: "English", image: require("./Assets/Eng.png") }, // Replace with actual path
   ]);
 
   const handleRemove = (language) => {
@@ -22,7 +22,7 @@ const LanguageSelectionScreen = ({navigation}) => {
         {selectedLanguages.map((lang, index) => (
           <LanguageCard key={index} language={lang.name} image={lang.image} onRemove={() => handleRemove(lang.name)} />
         ))}
-        <LanguageCard language="+" image={require("../../assets/logo.png")} /> {/* Placeholder for adding */}
+        <LanguageCard language="" image={require("./Assets/add.png")} /> {/* Placeholder for adding */}
       </ScrollView>
       <Button title="Next" onPress={() => navigation.navigate("Navigation")} />
     </View>

@@ -15,21 +15,21 @@ const DrawerSection = ({ navigation }) => {
           <Text style={styles.drawerHeading2}>Your Choice</Text>
 
           <InfoCard 
-            image={require('../../../assets/logo.png')}
+            image={require('../assets/pic1.png')}
             title="Want to book a cab?"
             subtitle="Book seamless cab experience"
             onPress={() => navigation.navigate('BookingLocation')}
           />
           
           <InfoCard 
-            image={require('../../../assets/logo.png')}
+            image={require('../assets/pic2.png')}
             title="Want to book a trip?"
             subtitle="Book from our itineraries"
             onPress={() => navigation.navigate('BookingLocation')}
           />
 
           <InfoCard 
-            image={require('../../../assets/logo.png')}
+            image={require('../assets/pic3.png')}
             title="Plan a tour as you wish"
             subtitle="Plan tours according to you"
             onPress={() => navigation.navigate('BookingLocation')}

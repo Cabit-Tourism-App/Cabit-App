@@ -4,7 +4,7 @@ import MapView, { Marker } from "react-native-maps";
 import { FontAwesome } from "@expo/vector-icons";
 import { Svg, Circle } from "react-native-svg";
 
-const RideAcceptedScreen = () => {
+const RideAcceptedScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <MapView
@@ -64,7 +64,7 @@ const RideAcceptedScreen = () => {
         </View>
 
         {/* Proceed Button */}
-        <TouchableOpacity style={styles.proceedButton}>
+        <TouchableOpacity style={styles.proceedButton} onPress={()=>navigation.navigate("Payment")}>
           <Text style={styles.proceedText}>Proceed</Text>
           <Text style={styles.priceText}>$9.00</Text>
           <FontAwesome name="arrow-right" size={18} color="white" />

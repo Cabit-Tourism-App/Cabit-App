@@ -99,7 +99,7 @@ const PaymentMethodScreen = ({ navigation }) => {
           </View>
           
           <View style={styles.footer}>
-            <ProceedButton onPress={handleProceed} />
+            <ProceedButton onPress={()=>navigation.navigate("Confirm")} />
           </View>
         </View>
       </LinearGradient>

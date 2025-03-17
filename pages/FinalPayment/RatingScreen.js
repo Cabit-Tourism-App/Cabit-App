@@ -71,7 +71,7 @@ const RatingScreen = ({ navigation }) => {
         <PaymentDetail payment={paymentData} />
       </ScrollView>
       
-      <SubmitButton onPress={handleSubmit} />
+      <SubmitButton onPress={()=>navigation.navigate("Profile")} />
     </SafeAreaView>
   );
 };

@@ -20,6 +20,9 @@ import MapScreen from "./pages/CabBooking/booking";
 import RideAcceptedScreen from "./pages/CabBooking/rideAccepted";
 import SignupPage from "pages/SignUp/Signup";
 import SplashScreen0 from "pages/Onboarding/SplashScreen0";
+import OngoingPage from "pages/OngoingRide/Ongoing";
+import RideFoundScreen from "pages/Onboarding/RideFoundScreen";
+import BookTripPage from "pages/BookTrip/BookTrip";
 // new comment
 // Create Stack Navigator
 const Stack = createStackNavigator();
@@ -27,7 +30,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SplashScreen0" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName="Navigation" screenOptions={{ headerShown: false }}>
         
         {/* Splash Screen */}
         {/* <Stack.Screen name="Splash" component={Splash} /> */}
@@ -53,6 +56,18 @@ export default function App() {
         <Stack.Screen name="BookingLocation" component={BookingLocationScreen} />
         <Stack.Screen name="MapScreen" component={MapScreen} />
         <Stack.Screen name="RideAccepted" component={RideAcceptedScreen} />
+
+        <Stack.Screen name="Payment" component={PaymentMethodScreen} />
+        <Stack.Screen name="Confirm" component={RideConfirmScreen} />
+
+        <Stack.Screen name="Ongoing" component={OngoingPage} />
+        <Stack.Screen name="Cancel" component={CancelBookingScreen} />
+        <Stack.Screen name="Rate" component={RatingScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+
+        <Stack.Screen name="Found" component={RideFoundScreen} />
+        <Stack.Screen name="BookTrip" component={BookTripPage} />
+
       </Stack.Navigator>
     </NavigationContainer>
   )

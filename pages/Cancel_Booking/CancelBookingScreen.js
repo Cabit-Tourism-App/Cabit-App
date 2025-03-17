@@ -107,7 +107,7 @@ const CancelBookingScreen = ({ navigation }) => {
           <View style={styles.buttonContainer}>
             <TouchableOpacity
               style={styles.submitButton}
-              onPress={handleSubmit}
+              onPress={()=>navigation.navigate("Rate")}
             >
               <Text style={styles.submitButtonText}>Send</Text>
             </TouchableOpacity>

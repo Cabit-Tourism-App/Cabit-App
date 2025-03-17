@@ -79,7 +79,7 @@ export default function SignupPage() {
             />
 
             {/* Input Fields */}
-            <View className="w-full max-w-sm mt-5">
+            <View className="w-full max-w-sm mt-1" style={{marginTop:-70}}>
               <InputField value={name} setValue={setName} placeholder="Enter Name" />
               <InputField value={email} setValue={setEmail} placeholder="Enter Email" />
               <InputField
