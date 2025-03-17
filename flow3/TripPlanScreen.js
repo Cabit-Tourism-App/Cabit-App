@@ -191,7 +191,7 @@ const BottomBar = () => {
 };
 
 // Main Component
-const TravelHomeScreen = () => {
+const TripPlanScreen = () => {
   const userImage = "https://randomuser.me/api/portraits/men/32.jpg";
   const scrollX = useRef(new Animated.Value(0)).current;
   
@@ -480,4 +480,4 @@ const styles = StyleSheet.create({
     },
   });
   
-  export default TravelHomeScreen;
+  export default TripPlanScreen;
