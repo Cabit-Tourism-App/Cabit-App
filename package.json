@@ -4,7 +4,7 @@
   "scripts": {
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "start": "expo start --dev-client",
+    "start": "nodemon --exec node --loader ts-node/esm index.js",
     "prebuild": "expo prebuild",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" && prettier -c \"**/*.{js,jsx,ts,tsx,json}\"",
     "format": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
@@ -16,10 +16,15 @@
     "@react-navigation/stack": "^7.1.2",
     "@reduxjs/toolkit": "^2.6.0",
     "@rnmapbox/maps": "^10.1.37",
+    "@stripe/stripe-react-native": "^0.43.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
     "expo": "^52.0.37",
     "expo-font": "^13.0.4",
     "expo-linear-gradient": "^14.0.2",
+    "expo-router": "^4.0.18",
     "expo-status-bar": "~2.0.1",
+    "express": "^4.21.2",
     "lottie-react-native": "^7.1.0",
     "nativewind": "latest",
     "react": "18.3.1",
@@ -30,11 +35,12 @@
     "react-native-reanimated": "3.16.2",
     "react-native-safe-area-context": "^4.12.0",
     "react-native-screens": "^4.4.0",
-    "react-native-svg": "^15.8.0",
-    "react-native-svg-uri": "^1.2.3",
+    "react-native-svg": "^15.11.2",
+    "react-native-svg-transformer": "^1.5.0",
     "react-native-vector-icons": "^10.2.0",
     "react-redux": "^9.2.0",
-    "redux": "^5.0.1"
+    "redux": "^5.0.1",
+    "stripe": "^17.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -45,6 +51,7 @@
     "@typescript-eslint/parser": "^7.7.0",
     "eslint": "^8.57.0",
     "eslint-config-universe": "^12.0.1",
+    "nodemon": "^3.1.9",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.0",
@@ -54,5 +61,19 @@
     "extends": "universe/native",
     "root": true
   },
-  "private": true
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cabit-Tourism-App/Cabit-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Cabit-Tourism-App/Cabit-App/issues"
+  },
+  "homepage": "https://github.com/Cabit-Tourism-App/Cabit-App#readme"
 }
