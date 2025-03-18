@@ -52,7 +52,7 @@ const TestimonialCard = ({ name, image, rating, text, scale }) => {
 };
 
 // Main Trip Screen Component
-const IternaryDescriptionScreen = () => {
+const IternaryDescriptionScreen = ({navigation}) => {
   // Sample data
   const tripDays = [
     {
@@ -254,7 +254,7 @@ const IternaryDescriptionScreen = () => {
       </ScrollView>
 
       {/* Book Now Button */}
-      <TouchableOpacity style={styles.bookButton}>
+      <TouchableOpacity style={styles.bookButton} onPress={() => navigation.navigate('BookTrip')}>
         <Text style={styles.bookButtonText}>Book Now</Text>
       </TouchableOpacity>
     </SafeAreaView>

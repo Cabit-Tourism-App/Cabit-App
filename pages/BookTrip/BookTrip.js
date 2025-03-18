@@ -27,7 +27,7 @@ const { width, height } = Dimensions.get("window");
  */
 
 /******  1d6b11e8-8554-4e01-ba2c-5bd4b5e5fafd  *******/
-export default function BookTripPage() {
+export default function BookTripPage({navigation}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -97,7 +97,7 @@ export default function BookTripPage() {
               />
 
               {/* Signup Button */}
-              <SignupButton title="Continue" onPress={() => alert("Signup Clicked")} />
+              <SignupButton title="Continue" onPress={() => navigation.navigate("Confirm")} />
             </View>
 
          

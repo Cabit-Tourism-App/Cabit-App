@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const { width } = Dimensions.get('window');
 
-const TripDestinationScreen = () => {
+const TripDestinationScreen = ({navigation}) => {
   // Sample data - replace with your actual data
   const destination = {
     name: 'Great Pattaya Beach',
@@ -98,7 +98,7 @@ const TripDestinationScreen = () => {
             <Text style={styles.priceLabel}>Price</Text>
             <Text style={styles.priceText}>{destination.price}</Text>
           </View>
-          <TouchableOpacity style={styles.bookButton}>
+          <TouchableOpacity style={styles.bookButton} onPress={() => navigation.navigate('AddedLocations')}>
             <Text style={styles.bookButtonText}>Book Now</Text>
           </TouchableOpacity>
         </View>

@@ -3,13 +3,13 @@ import { View, Text, Image, StyleSheet, SafeAreaView, ScrollView, TouchableOpaci
 import { Ionicons } from '@expo/vector-icons';
 
 // Main screen component
-const SavedDestinationsScreen = () => {
+const SavedDestinationsScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       {/* Header with "Saved" title and profile icon */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Saved</Text>
-        <TouchableOpacity style={styles.profileButton}>
+        <TouchableOpacity style={styles.profileButton} onPress={() => navigation.navigate('Profile')}>
           <Image 
             source={require('assets/profile-icon.png')} 
             style={styles.profileAvatar} 

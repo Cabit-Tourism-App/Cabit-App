@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { Ionicons, MaterialIcons, FontAwesome } from '@expo/vector-icons';
 
-const DestinationHomeScreen = () => {
+const DestinationHomeScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#fff" barStyle="dark-content" />
@@ -74,7 +74,7 @@ const DestinationHomeScreen = () => {
         </View>
         
         <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.destinationsContainer}>
-          <TouchableOpacity style={styles.destinationCard}>
+          <TouchableOpacity style={styles.destinationCard} onPress={() => navigation.navigate('Iternary')}>
             <Image
               source={{ uri: 'https://i.pinimg.com/474x/28/2e/41/282e413009092e1c5a9e46a2979796c6.jpg' }}
               style={styles.destinationImage}

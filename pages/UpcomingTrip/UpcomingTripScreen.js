@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, SafeAreaView, ScrollView, TouchableOpaci
 import { Ionicons } from '@expo/vector-icons';
 
 // Main screen component
-const UpcomingTripsScreen = () => {
+const UpcomingTripsScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
@@ -56,7 +56,7 @@ const UpcomingTripsScreen = () => {
       
       {/* Bottom Navigation */}
       <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Saved')}>
           <Ionicons name="location" size={24} color="#000" />
           <Text style={styles.navText}>Trips</Text>
         </TouchableOpacity>

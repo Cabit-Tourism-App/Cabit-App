@@ -23,6 +23,16 @@ import SplashScreen0 from "pages/Onboarding/SplashScreen0";
 import OngoingPage from "pages/OngoingRide/Ongoing";
 import RideFoundScreen from "pages/Onboarding/RideFoundScreen";
 import BookTripPage from "pages/BookTrip/BookTrip";
+import DestinationHomeScreen from "Flow2/DestinationHomeScreen";
+import IternaryDescriptionScreen from "Flow2/IternaryDescriptionScreen";
+import SavedDestinationsScreen from "Flow2/SavedDestinationsScreen";
+import UpcomingTripsScreen from "pages/UpcomingTrip/UpcomingTripScreen";
+import TripHistoryScreen from "pages/TripHistory/TripHistoryScreen";
+import PaymentRideMethodScreen from "pages/Payment/PaymentRide";
+import RideConfirmScreenFlow1 from "pages/Onboarding/RideConfirmFlow1";
+import AddedLocationsScreen from "flow3/AddedLocationsScreen";
+import TripDestinationScreen from "flow3/TripDestinationScreen";
+import TripPlanScreen from "flow3/TripPlanScreen";
 // new comment
 // Create Stack Navigator
 const Stack = createStackNavigator();
@@ -30,7 +40,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Navigation" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName="SplashScreen0" screenOptions={{ headerShown: false }}>
         
         {/* Splash Screen */}
         {/* <Stack.Screen name="Splash" component={Splash} /> */}
@@ -59,6 +69,7 @@ export default function App() {
 
         <Stack.Screen name="Payment" component={PaymentMethodScreen} />
         <Stack.Screen name="Confirm" component={RideConfirmScreen} />
+        <Stack.Screen name="Confirm1" component={RideConfirmScreenFlow1} />
 
         <Stack.Screen name="Ongoing" component={OngoingPage} />
         <Stack.Screen name="Cancel" component={CancelBookingScreen} />
@@ -68,6 +79,18 @@ export default function App() {
         <Stack.Screen name="Found" component={RideFoundScreen} />
         <Stack.Screen name="BookTrip" component={BookTripPage} />
 
+        <Stack.Screen name="Home" component={DestinationHomeScreen} />
+        <Stack.Screen name="Iternary" component={IternaryDescriptionScreen} />
+        <Stack.Screen name="Saved" component={SavedDestinationsScreen} />
+
+        <Stack.Screen name="Upcoming" component={UpcomingTripsScreen} />
+        <Stack.Screen name="History" component={TripHistoryScreen} />
+
+        <Stack.Screen name="PaymentRide" component={PaymentRideMethodScreen} />
+
+        <Stack.Screen name="AddedLocations" component={AddedLocationsScreen} />
+        <Stack.Screen name="TripDestination" component={TripDestinationScreen} />
+        <Stack.Screen name="TripPlan" component={TripPlanScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )

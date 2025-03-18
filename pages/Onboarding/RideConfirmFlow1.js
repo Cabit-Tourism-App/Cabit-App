@@ -5,8 +5,8 @@ import { IMAGE_URI } from "./constants/ImageUri2";
 // import styles from "./styles/ImageStyles";
 const { width, height } = Dimensions.get("window");
 
-const RideConfirmScreen = ({navigation}) => (
-  <Pressable style={styles.container} onPress={() => navigation.navigate("Upcoming")}>
+const RideConfirmScreenFlow1 = ({navigation}) => (
+  <Pressable style={styles.container} onPress={() => navigation.navigate("Ongoing")}>
  <Image
       source={require("./Assets/booked.png")}
       style={{
@@ -30,4 +30,4 @@ const styles= StyleSheet.create({
   },
 });
 
-export default RideConfirmScreen;
+export default RideConfirmScreenFlow1;

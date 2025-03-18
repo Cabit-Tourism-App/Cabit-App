@@ -13,7 +13,7 @@ import ProceedButton from './Components/ProceedButton';
 
 const { width } = Dimensions.get('window');
 
-const PaymentMethodScreen = ({ navigation }) => {
+const PaymentRideMethodScreen = ({ navigation }) => {
   // State for selected payment method
   const [selectedPayment, setSelectedPayment] = useState('upi');
 
@@ -21,6 +21,7 @@ const PaymentMethodScreen = ({ navigation }) => {
   const handleClose = () => {
     navigation.goBack();
   };
+
 
   const handlePaymentSelect = (paymentType) => {
     setSelectedPayment(paymentType);
@@ -99,7 +100,7 @@ const PaymentMethodScreen = ({ navigation }) => {
           </View>
           
           <View style={styles.footer}>
-            <ProceedButton onPress={()=>navigation.navigate("Confirm1")} />
+            <ProceedButton onPress={()=>navigation.navigate("Confirm")} />
           </View>
         </View>
       </LinearGradient>
@@ -136,4 +137,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PaymentMethodScreen;
+export default PaymentRideMethodScreen;

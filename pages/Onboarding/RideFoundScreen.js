@@ -19,7 +19,7 @@ const RideFoundScreen = ({ navigation }) => {
   return (
     <Pressable
       style={styles.container}
-      onPress={() => navigation.navigate("Cancel")}
+      onPress={() => navigation.navigate("PaymentPaymentRide")}
     >
       <FullScreenImage uri={IMAGE_URI} />
 

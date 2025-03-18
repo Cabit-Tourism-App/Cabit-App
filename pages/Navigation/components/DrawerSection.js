@@ -25,14 +25,14 @@ const DrawerSection = ({ navigation }) => {
             image={require('../assets/pic2.png')}
             title="Want to book a trip?"
             subtitle="Book from our itineraries"
-            onPress={() => navigation.navigate('BookingLocation')}
+            onPress={() => navigation.navigate('Home')}
           />
 
           <InfoCard 
             image={require('../assets/pic3.png')}
             title="Plan a tour as you wish"
             subtitle="Plan tours according to you"
-            onPress={() => navigation.navigate('BookingLocation')}
+            onPress={() => navigation.navigate('TripPlan')}
           />
         </View>
       </ImageBackground>

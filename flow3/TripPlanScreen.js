@@ -191,7 +191,7 @@ const BottomBar = () => {
 };
 
 // Main Component
-const TripPlanScreen = () => {
+const TripPlanScreen = ({navigation}) => {
   const userImage = "https://randomuser.me/api/portraits/men/32.jpg";
   const scrollX = useRef(new Animated.Value(0)).current;
   
@@ -243,10 +243,14 @@ const TripPlanScreen = () => {
       
       <Header />
       <UserGreeting name="McHardyan" image={userImage} />
+      <TouchableOpacity onPress={() => navigation.navigate('TripDestination')}>
       <LocationSelector location="Jammu Kashmir" />
+      </TouchableOpacity>
       <NearbyLocations locations={nearbyLocations} scrollX={scrollX} />
       <GuidesSection guides={guides} />
+      <TouchableOpacity onPress={() => navigation.navigate('TripDestination')}>
       <BottomBar />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

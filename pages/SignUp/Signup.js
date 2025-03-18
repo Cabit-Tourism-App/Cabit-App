@@ -27,7 +27,7 @@ const { width, height } = Dimensions.get("window");
  */
 
 /******  1d6b11e8-8554-4e01-ba2c-5bd4b5e5fafd  *******/
-export default function SignupPage() {
+export default function SignupPage({navigation}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -106,7 +106,7 @@ export default function SignupPage() {
             <SocialIconsBar />
 
             {/* Sign In Link */}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
               <Text
                 className="text-gray-500"
                 style={{ marginLeft: "25%", marginTop: 40 }}

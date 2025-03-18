@@ -267,7 +267,7 @@ import { View, Text, Image, StyleSheet, SafeAreaView, ScrollView, TouchableOpaci
 import { Ionicons } from '@expo/vector-icons';
 
 // Main screen component
-const AddedLocationsScreen = () => {
+const AddedLocationsScreen = ({navigation}) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [locations, setLocations] = useState([
     { id: 1, name: 'Red Fort', description: 'Discover new places and find new adventures.', bgColor: '#F3E5FF', image: require('assets/red-fort.png') },
@@ -338,7 +338,7 @@ const AddedLocationsScreen = () => {
       
       {/* Book a Trip Button */}
       <View style={styles.bookButtonContainer}>
-        <TouchableOpacity style={styles.bookButton}>
+        <TouchableOpacity style={styles.bookButton} onPress={()=> navigation.navigate('Confirm')}>
           <Text style={styles.bookButtonText}>Book a Trip</Text>
         </TouchableOpacity>
       </View>
