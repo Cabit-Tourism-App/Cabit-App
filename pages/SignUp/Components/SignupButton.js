@@ -5,7 +5,7 @@ export default function SignupButton({ title, onPress }) {
   return (
     <TouchableOpacity
       style={{
-        backgroundColor: "#007BFF",
+        backgroundColor: "#FFB61D",
         padding: 15,
         borderRadius: 25,
         alignItems: "center",

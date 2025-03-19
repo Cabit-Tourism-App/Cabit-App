@@ -55,6 +55,7 @@ export default function SignupPage({navigation}) {
               width: width,
               height: height * 0.35,
               resizeMode: "cover",
+              marginTop: -10,
             }}
           />
 
@@ -62,7 +63,7 @@ export default function SignupPage({navigation}) {
           <View className="flex-1 items-center mt-10 px-5">
             <Text
               className="text-3xl font-bold text-center"
-              style={{ fontFamily: "ComicSansMS", fontSize: 40, marginLeft: 80 }}
+              style={{ fontFamily: "ComicSansMS", fontSize: 40, marginLeft: 80,marginTop:-60 }}
             >
               Create Account
             </Text>
@@ -73,7 +74,7 @@ export default function SignupPage({navigation}) {
                 width: 250,
                 height: 250,
                 resizeMode: "contain",
-                marginTop: -60,
+                marginTop: -70,
                 marginLeft: 80,
               }}
             />
@@ -109,7 +110,7 @@ export default function SignupPage({navigation}) {
             <TouchableOpacity onPress={() => navigation.navigate("Login")}>
               <Text
                 className="text-gray-500"
-                style={{ marginLeft: "25%", marginTop: 40 }}
+                style={{ marginLeft: "25%", marginTop: 10 }}
               >
                 Already have an account? <Text className="text-blue-500">Sign In </Text>
               </Text>

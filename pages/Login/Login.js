@@ -47,13 +47,14 @@ export default function LoginPage({navigation}) {
             width: width,
             height: height * 0.35,
             resizeMode: "cover",
+            marginTop: -60,
           }}
         />
 
         {/* Bottom Content */}
         <View className="flex-1 items-center mt-10 px-5">
           <Text className="text-3xl font-bold text-center" style={{ fontFamily: "ComicSansMS" , fontSize:42,
-                          marginLeft: 110,
+                          marginLeft: 110,marginTop:-50
 
           }}>
             Welcome to
@@ -93,7 +94,7 @@ export default function LoginPage({navigation}) {
           {/* Sign Up Link */}
           <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
             <Text className="text-gray-500"
-              style={{ marginLeft: "25%",marginTop:40 }}>
+              style={{ marginLeft: "25%",marginTop:10 }}>
               Don't have an account? <Text className="text-blue-500">Sign Up</Text>
             </Text>
           </TouchableOpacity>

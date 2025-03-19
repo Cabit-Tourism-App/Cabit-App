@@ -248,7 +248,7 @@ const TripPlanScreen = ({navigation}) => {
       </TouchableOpacity>
       <NearbyLocations locations={nearbyLocations} scrollX={scrollX} />
       <GuidesSection guides={guides} />
-      <TouchableOpacity onPress={() => navigation.navigate('TripDestination')}>
+      <TouchableOpacity onPress={() => navigation.navigate('TripDestination')} style={{marginTop:150}}>
       <BottomBar />
       </TouchableOpacity>
     </SafeAreaView>

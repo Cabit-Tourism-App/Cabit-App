@@ -6,8 +6,8 @@ export default function SocialIconsBar() {
     <View className="flex-row space-x-5 mt-2" style={{
         display: "flex",
         flexDirection: "row",
-        marginLeft:130,
-        marginTop:20,
+        marginLeft:140,
+        marginTop:10,
     }}>
     <TouchableOpacity
       style={{

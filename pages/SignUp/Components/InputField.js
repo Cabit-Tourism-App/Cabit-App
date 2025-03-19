@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     marginLeft:45,
-    marginTop:10
+    marginTop:5
   },
   input: {
     flex: 1,
