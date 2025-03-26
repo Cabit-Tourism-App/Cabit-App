@@ -1,111 +1,123 @@
-// ProfileScreen/index.js
-import React, { useState } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import InputField from './Components/InputField';
-// Import components
-import Header from './Components/Header';
-import ProfileAvatar from './Components/ProfileAvatar';
-import MenuOption from './Components/MenuOption';
-import CurvedBackground from './Components/CurvedBackground';
-import Button from './Components/Button';
-const EditProfileScreen = ({ navigation }) => {
-  // State
-  const [pushNotifications, setPushNotifications] = useState(true);
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+  ScrollView,
+} from "react-native";
 
-  // Mock data
-  const userData = {
-    name: 'McHardyan',
-    avatar: 'https://randomuser.me/api/portraits/men/36.jpg',
-  };
+export default function ProfileEditScreen() {
+  const [username, setUsername] = useState("John Doe");
+  const [email, setEmail] = useState("john.doe@example.com");
+  const [bio, setBio] = useState("This is my bio...");
+  const [phone, setPhone] = useState("+91 9222222222");
 
-  // Handlers
-  const handleClose = () => {
-    navigation.goBack();
-  };
-
-  const handleSettings = () => {
-    // Handle settings action
-  };
-
-  const handleLogout = () => {
-    // Handle logout action
-  };
-
-  const handleProfileEdit = () => {
-    // Handle profile edit action
-    navigation.navigate('EditProfile');
-  };
-
-  const handleLanguageChange = () => {
-    // Handle language change action
+  const handleSave = () => {
+    alert("Profile Saved!");
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <LinearGradient
-        colors={['#FFCC66', '#FFAA33']}
-        style={styles.gradient}
-      >
-        <Header onClose={handleClose} onSettings={handleSettings} />
-        
-        <View style={styles.mainContent}>
-          <View style={styles.profileSection}>
-            <ProfileAvatar name={userData.name} image={userData.avatar} />
-          </View>
+      <ScrollView>
+        <Text style={styles.heading}>Edit Profile</Text>
 
-          <View style={styles.curvedContainer}>
-            <View style={styles.menuOptions}>
-            <View style={styles.inputContainer}>
-<InputField value={"name"} setValue={"setName"} placeholder="Name" />
-<InputField value={"email"} setValue={"setEmail"} placeholder="Email" keyboardType="email-address" />
-<InputField value={"phone"} setValue={"setPhone"} placeholder="Phone Number" keyboardType="phone-pad" />
-<Button title="Save"></Button>
-</View>
-            </View>
-          </View>
-        </View>
-      </LinearGradient>
+        {/* Profile Image */}
+        <Image
+          source={require("../../assets/logo.png")}
+          style={styles.profileImage}
+        />
+
+        {/* Input Fields */}
+        <Text style={styles.label}>Username</Text>
+        <TextInput
+          style={styles.input}
+          value={username}
+          onChangeText={setUsername}
+        />
+
+        <Text style={styles.label}>Email</Text>
+        <TextInput
+          style={styles.input}
+          value={email}
+          onChangeText={setEmail}
+        />
+ <Text style={styles.label}>Phone number</Text>
+        <TextInput
+          style={styles.input}
+          value={phone}
+          onChangeText={setPhone}
+        />
+        <Text style={styles.label}>Bio</Text>
+        <TextInput
+          style={styles.textarea}
+          value={bio}
+          onChangeText={setBio}
+          multiline
+        />
+
+        {/* Save Button */}
+        <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
+          <Text style={styles.saveButtonText}>Save Changes</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
-    backgroundColor: '#00000',
+    padding: 20,
+    backgroundColor: "#f9f9f9",
   },
-  gradient: {
-    flex: 1,
+  heading: {
+    fontSize: 32,
+    fontWeight: "bold",
+    marginBottom: 20,
+    color: "#333",
   },
-  mainContent: {
-    flex: 1,
-    position: 'relative',
+  profileImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    alignSelf: "center",
+    marginBottom: 30,
   },
-  profileSection: {
-    alignItems: 'center',
-    paddingTop: 16,
-    paddingBottom: 40,
+  label: {
+    fontSize: 16,
+    fontWeight: "500",
+    marginBottom: 5,
   },
-  curvedContainer: {
-    flex: 1,
-    backgroundColor: '#00000',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    paddingTop: 40,
-    paddingHorizontal: 16,
+  input: {
+    backgroundColor: "#e0e0e0",
+    padding: 12,
+    borderRadius: 8,
+    fontSize: 16,
+    marginBottom: 20,
   },
-  menuOptions: {
-    paddingBottom: 24,
+  textarea: {
+    backgroundColor: "#e0e0e0",
+    padding: 12,
+    borderRadius: 8,
+    fontSize: 16,
+    height: 120,
+    marginBottom: 30,
   },
-  inputContainer:{
-    marginTop: 40,
-    marginLeft:-20
-  }
-});
-
-export default EditProfileScreen;
-
+  saveButton: {
+    backgroundColor: "#FFB61D",
+    padding: 15,
+    borderRadius: 8,
+    alignItems: "center",
+  },
+  saveButtonText: {
+    color: "#FFF",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+};
 
 
 // <View style={styles.inputContainer}>

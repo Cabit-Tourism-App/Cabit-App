@@ -39,6 +39,7 @@ const ProfileScreen = ({ navigation }) => {
 
   const handleLanguageChange = () => {
     // Handle language change action
+    navigation.navigate('LanguageSelection');
   };
 
   return (
