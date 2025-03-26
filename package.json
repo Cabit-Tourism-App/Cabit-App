@@ -12,9 +12,14 @@
   },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.2.3",
+<<<<<<< HEAD
     "@react-navigation/bottom-tabs": "^7.3.2",
     "@react-navigation/native": "^7.0.15",
     "@react-navigation/stack": "^7.1.2",
+=======
+    "@react-navigation/native": "^7.0.19",
+    "@react-navigation/stack": "^7.2.3",
+>>>>>>> f85998d05004a73198d50814a9a6074e2a69c9a6
     "@reduxjs/toolkit": "^2.6.0",
     "@rnmapbox/maps": "^10.1.37",
     "@stripe/stripe-react-native": "^0.43.0",
