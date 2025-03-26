@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     // height: "100%",
   },
   drawerContainer: {
-    backgroundColor: "rgba(255, 255, 255, 0.85)", // Semi-transparent white for contrast
+    backgroundColor: "rgb(255, 255, 255)", // Semi-transparent white for contrast
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     padding: 20,

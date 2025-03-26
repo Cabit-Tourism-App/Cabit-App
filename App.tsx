@@ -33,6 +33,7 @@ import RideConfirmScreenFlow1 from "pages/Onboarding/RideConfirmFlow1";
 import AddedLocationsScreen from "flow3/AddedLocationsScreen";
 import TripDestinationScreen from "flow3/TripDestinationScreen";
 import TripPlanScreen from "flow3/TripPlanScreen";
+import EditProfileScreen from "pages/UserProfile/ProfileEditScreen";
 // new comment
 // Create Stack Navigator
 const Stack = createStackNavigator();
@@ -91,6 +92,8 @@ export default function App() {
         <Stack.Screen name="AddedLocations" component={AddedLocationsScreen} />
         <Stack.Screen name="TripDestination" component={TripDestinationScreen} />
         <Stack.Screen name="TripPlan" component={TripPlanScreen} />
+        <Stack.Screen name="EditProfile" component={EditProfileScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   )

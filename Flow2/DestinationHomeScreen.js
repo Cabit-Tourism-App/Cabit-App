@@ -198,13 +198,17 @@ const DestinationHomeScreen = ({navigation}) => {
         <TouchableOpacity style={styles.navItem}>
           <Ionicons name="home" size={24} color="#FFB52E" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
-          <Ionicons name="people-outline" size={24} color="#888" />
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('History')}>
+          <Ionicons name="bookmark-outline" size={24} color="#888" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
-          <Ionicons name="chatbubble-outline" size={24} color="#888" />
+        <TouchableOpacity style={styles.navItem2}>
+          <Ionicons name="ellipse" size={36} color="red" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Upcoming')}>
+          <Ionicons name="bulb-outline" size={24} color="#888" />
+        </TouchableOpacity>
+    
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Profile')}>
           <Ionicons name="person-outline" size={24} color="#888" />
         </TouchableOpacity>
       </View>
@@ -422,6 +426,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  navItem2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // width: 11,
+    // height: 64,
+ 
   },
 });
 

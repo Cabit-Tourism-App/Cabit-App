@@ -2,14 +2,14 @@
 import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-
+import InputField from './Components/InputField';
 // Import components
 import Header from './Components/Header';
 import ProfileAvatar from './Components/ProfileAvatar';
 import MenuOption from './Components/MenuOption';
 import CurvedBackground from './Components/CurvedBackground';
-
-const ProfileScreen = ({ navigation }) => {
+import Button from './Components/Button';
+const EditProfileScreen = ({ navigation }) => {
   // State
   const [pushNotifications, setPushNotifications] = useState(true);
 
@@ -56,36 +56,12 @@ const ProfileScreen = ({ navigation }) => {
 
           <View style={styles.curvedContainer}>
             <View style={styles.menuOptions}>
-              <MenuOption
-                icon="person-outline"
-                title="Profile & Account"
-                subtitle="Edit your profile"
-                onPress={handleProfileEdit}
-              />
-              
-              <MenuOption
-                icon="notifications-outline"
-                title="Push-Notifications"
-                subtitle="Set up push notifications"
-                isSwitch={true}
-                isActive={pushNotifications}
-                onToggle={setPushNotifications}
-              />
-              
-              <MenuOption
-                icon="language-outline"
-                title="Language"
-                subtitle="Change your Language"
-                onPress={handleLanguageChange}
-              />
-              
-              <MenuOption
-                icon="lock-closed-outline"
-                title="Logout"
-                subtitle="Want to Logout"
-                isLogout={true}
-                onPress={handleLogout}
-              />
+            <View style={styles.inputContainer}>
+<InputField value={"name"} setValue={"setName"} placeholder="Name" />
+<InputField value={"email"} setValue={"setEmail"} placeholder="Email" keyboardType="email-address" />
+<InputField value={"phone"} setValue={"setPhone"} placeholder="Phone Number" keyboardType="phone-pad" />
+<Button title="Save"></Button>
+</View>
             </View>
           </View>
         </View>
@@ -97,7 +73,7 @@ const ProfileScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFCC66',
+    backgroundColor: '#00000',
   },
   gradient: {
     flex: 1,
@@ -113,7 +89,7 @@ const styles = StyleSheet.create({
   },
   curvedContainer: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#00000',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingTop: 40,
@@ -122,6 +98,18 @@ const styles = StyleSheet.create({
   menuOptions: {
     paddingBottom: 24,
   },
+  inputContainer:{
+    marginTop: 40,
+    marginLeft:-20
+  }
 });
 
-export default ProfileScreen;
+export default EditProfileScreen;
+
+
+
+// <View style={styles.inputContainer}>
+// <InputField value={name} setValue={setName} placeholder="Name" />
+// <InputField value={email} setValue={setEmail} placeholder="Email" keyboardType="email-address" />
+// <InputField value={phone} setValue={setPhone} placeholder="Phone Number" keyboardType="phone-pad" />
+// </View>

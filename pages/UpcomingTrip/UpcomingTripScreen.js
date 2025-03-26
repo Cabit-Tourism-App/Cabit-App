@@ -56,20 +56,20 @@ const UpcomingTripsScreen = ({navigation}) => {
       
       {/* Bottom Navigation */}
       <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Saved')}>
-          <Ionicons name="location" size={24} color="#000" />
-          <Text style={styles.navText}>Trips</Text>
+        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('Home')}>
+          <Ionicons name="home" size={24} color="#000" />
+          <Text style={styles.navText}>Home</Text>
         </TouchableOpacity>
-        
+           
         <TouchableOpacity style={styles.navItem}>
-          <Ionicons name="person-outline" size={24} color="#999" />
+          <Ionicons name="bookmark-outline" size={24} color="#999" onPress={() => navigation.navigate('History')} />
+          <Text style={styles.navTextInactive}>History</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.navItem}>
+          <Ionicons name="person-outline" size={24} color="#999" onPress={() => navigation.navigate('Profile')} />
           <Text style={styles.navTextInactive}>Profile</Text>
         </TouchableOpacity>
-        
-        <TouchableOpacity style={styles.navItem}>
-          <Ionicons name="settings-outline" size={24} color="#999" />
-          <Text style={styles.navTextInactive}>Settings</Text>
-        </TouchableOpacity>
+     
       </View>
     </SafeAreaView>
   );

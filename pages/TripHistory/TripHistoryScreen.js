@@ -84,7 +84,7 @@ const Header = ({ onClose }) => {
 };
 
 // Main component
-const TripHistoryScreen = () => {
+const TripHistoryScreen = ({navigation}) => {
   const [activeFilter, setActiveFilter] = React.useState('History');
   
   const tripData = [
@@ -126,7 +126,7 @@ const TripHistoryScreen = () => {
       
       {/* Yellow background */}
       <View style={styles.yellowBackground}>
-        <Header onClose={() => console.log('Close pressed')} />
+        <Header onClose={() => navigation.goBack()} />
       </View>
       
       {/* White overlay */}

@@ -34,10 +34,13 @@ const styles = StyleSheet.create({
   greeting: {
     fontSize: 24,
     marginRight: 8,
+    color:"#f5f5f5"
+
   },
   name: {
     fontSize: 24,
     fontWeight: 'bold',
+    color:"#f5f5f5"
   },
 });
 
