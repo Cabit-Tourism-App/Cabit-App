@@ -37,61 +37,108 @@ import TripPlanScreen from "flow3/TripPlanScreen";
 // Create Stack Navigator
 const Stack = createStackNavigator();
 
+// export default function App() {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator initialRouteName="SplashScreen0" screenOptions={{ headerShown: false }}>
+        
+//         {/* Splash Screen */}
+//         {/* <Stack.Screen name="Splash" component={Splash} /> */}
+
+//         {/* Onboarding Screens */}
+//         <Stack.Screen name="SplashScreen0" component={SplashScreen0} />
+
+//         <Stack.Screen name="Onboarding11" component={OnboardingScreen11} />
+//         <Stack.Screen name="Onboarding12" component={OnboardingScreen12} />
+//         <Stack.Screen name="Onboarding13" component={OnboardingScreen13} />
+
+//         {/* Login Screen */}
+//         <Stack.Screen name="Login" component={LoginScreen} />
+//         <Stack.Screen name="Signup" component={SignupPage} />
+
+//         {/* Main Navigation Screen */}
+//         <Stack.Screen name="Navigation" component={NavigationScreen} />
+
+//         {/* Language Selection */}
+//         <Stack.Screen name="LanguageSelection" component={LanguageSelectionScreen} />
+
+//         {/* Booking Flow */}
+//         <Stack.Screen name="BookingLocation" component={BookingLocationScreen} />
+//         <Stack.Screen name="MapScreen" component={MapScreen} />
+//         <Stack.Screen name="RideAccepted" component={RideAcceptedScreen} />
+
+//         <Stack.Screen name="Payment" component={PaymentMethodScreen} />
+//         <Stack.Screen name="Confirm" component={RideConfirmScreen} />
+//         <Stack.Screen name="Confirm1" component={RideConfirmScreenFlow1} />
+
+//         <Stack.Screen name="Ongoing" component={OngoingPage} />
+//         <Stack.Screen name="Cancel" component={CancelBookingScreen} />
+//         <Stack.Screen name="Rate" component={RatingScreen} />
+//         <Stack.Screen name="Profile" component={ProfileScreen} />
+
+//         <Stack.Screen name="Found" component={RideFoundScreen} />
+//         <Stack.Screen name="BookTrip" component={BookTripPage} />
+
+//         <Stack.Screen name="Home" component={DestinationHomeScreen} />
+//         <Stack.Screen name="Iternary" component={IternaryDescriptionScreen} />
+//         <Stack.Screen name="Saved" component={SavedDestinationsScreen} />
+
+//         <Stack.Screen name="Upcoming" component={UpcomingTripsScreen} />
+//         <Stack.Screen name="History" component={TripHistoryScreen} />
+
+//         <Stack.Screen name="PaymentRide" component={PaymentRideMethodScreen} />
+
+//         <Stack.Screen name="AddedLocations" component={AddedLocationsScreen} />
+//         <Stack.Screen name="TripDestination" component={TripDestinationScreen} />
+//         <Stack.Screen name="TripPlan" component={TripPlanScreen} />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// }
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SplashScreen0" screenOptions={{ headerShown: false }}>
-        
-        {/* Splash Screen */}
-        {/* <Stack.Screen name="Splash" component={Splash} /> */}
+      {/* Ensure children exist inside the container */}
+      <>
+        <Stack.Navigator initialRouteName="SplashScreen0" screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="SplashScreen0" component={SplashScreen0} />
+          <Stack.Screen name="Onboarding11" component={OnboardingScreen11} />
+          <Stack.Screen name="Onboarding12" component={OnboardingScreen12} />
+          <Stack.Screen name="Onboarding13" component={OnboardingScreen13} />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Signup" component={SignupPage} />
+          <Stack.Screen name="Navigation" component={NavigationScreen} />
+          <Stack.Screen name="LanguageSelection" component={LanguageSelectionScreen} />
+          <Stack.Screen name="BookingLocation" component={BookingLocationScreen} />
+          <Stack.Screen name="MapScreen" component={MapScreen} />
+          <Stack.Screen name="RideAccepted" component={RideAcceptedScreen} />
+          
+          <Stack.Screen name="Payment" component={PaymentMethodScreen} />
+          <Stack.Screen name="Confirm" component={RideConfirmScreen} />
+          <Stack.Screen name="Confirm1" component={RideConfirmScreenFlow1} />
 
-        {/* Onboarding Screens */}
-        <Stack.Screen name="SplashScreen0" component={SplashScreen0} />
+          <Stack.Screen name="Ongoing" component={OngoingPage} />
+          <Stack.Screen name="Cancel" component={CancelBookingScreen} />
+          <Stack.Screen name="Rate" component={RatingScreen} />
+          <Stack.Screen name="Profile" component={ProfileScreen} />
 
-        <Stack.Screen name="Onboarding11" component={OnboardingScreen11} />
-        <Stack.Screen name="Onboarding12" component={OnboardingScreen12} />
-        <Stack.Screen name="Onboarding13" component={OnboardingScreen13} />
+          <Stack.Screen name="Found" component={RideFoundScreen} />
+          <Stack.Screen name="BookTrip" component={BookTripPage} />
 
-        {/* Login Screen */}
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Signup" component={SignupPage} />
+          <Stack.Screen name="Home" component={DestinationHomeScreen} />
+          <Stack.Screen name="Iternary" component={IternaryDescriptionScreen} />
+          <Stack.Screen name="Saved" component={SavedDestinationsScreen} />
 
-        {/* Main Navigation Screen */}
-        <Stack.Screen name="Navigation" component={NavigationScreen} />
+          <Stack.Screen name="Upcoming" component={UpcomingTripsScreen} />
+          <Stack.Screen name="History" component={TripHistoryScreen} />
 
-        {/* Language Selection */}
-        <Stack.Screen name="LanguageSelection" component={LanguageSelectionScreen} />
+          <Stack.Screen name="PaymentRide" component={PaymentRideMethodScreen} />
 
-        {/* Booking Flow */}
-        <Stack.Screen name="BookingLocation" component={BookingLocationScreen} />
-        <Stack.Screen name="MapScreen" component={MapScreen} />
-        <Stack.Screen name="RideAccepted" component={RideAcceptedScreen} />
-
-        <Stack.Screen name="Payment" component={PaymentMethodScreen} />
-        <Stack.Screen name="Confirm" component={RideConfirmScreen} />
-        <Stack.Screen name="Confirm1" component={RideConfirmScreenFlow1} />
-
-        <Stack.Screen name="Ongoing" component={OngoingPage} />
-        <Stack.Screen name="Cancel" component={CancelBookingScreen} />
-        <Stack.Screen name="Rate" component={RatingScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
-
-        <Stack.Screen name="Found" component={RideFoundScreen} />
-        <Stack.Screen name="BookTrip" component={BookTripPage} />
-
-        <Stack.Screen name="Home" component={DestinationHomeScreen} />
-        <Stack.Screen name="Iternary" component={IternaryDescriptionScreen} />
-        <Stack.Screen name="Saved" component={SavedDestinationsScreen} />
-
-        <Stack.Screen name="Upcoming" component={UpcomingTripsScreen} />
-        <Stack.Screen name="History" component={TripHistoryScreen} />
-
-        <Stack.Screen name="PaymentRide" component={PaymentRideMethodScreen} />
-
-        <Stack.Screen name="AddedLocations" component={AddedLocationsScreen} />
-        <Stack.Screen name="TripDestination" component={TripDestinationScreen} />
-        <Stack.Screen name="TripPlan" component={TripPlanScreen} />
-      </Stack.Navigator>
+          <Stack.Screen name="AddedLocations" component={AddedLocationsScreen} />
+          <Stack.Screen name="TripDestination" component={TripDestinationScreen} />
+          <Stack.Screen name="TripPlan" component={TripPlanScreen} />
+        </Stack.Navigator>
+      </>
     </NavigationContainer>
-  )
+  );
 }

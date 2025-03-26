@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@expo-google-fonts/nunito": "^0.2.3",
-    "@react-navigation/native": "^7.0.15",
-    "@react-navigation/stack": "^7.1.2",
+    "@react-navigation/native": "^7.0.19",
+    "@react-navigation/stack": "^7.2.3",
     "@reduxjs/toolkit": "^2.6.0",
     "@rnmapbox/maps": "^10.1.37",
     "@stripe/stripe-react-native": "^0.43.0",
